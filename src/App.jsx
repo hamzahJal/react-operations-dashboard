@@ -8,7 +8,7 @@ import Alerts from '@pages/Alerts';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.MODE === 'production' ? '/react-operations-dashboard' : '/'}>
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Dashboard />} />
